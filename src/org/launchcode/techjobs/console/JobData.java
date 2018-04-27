@@ -82,17 +82,26 @@ public class JobData {
         return jobs;
     }
 
-    public static void findByValue(ArrayList<HashMap<String,String>> someJobs, String searchTerm){
-        for (HashMap job: someJobs) {
+    public static ArrayList findByValue(String searchTerm){
+
+        loadData();
+
+        ArrayList<HashMap<String, String>> relevantJobs = new ArrayList<HashMap<String, String>>();
+
+        for (HashMap job: allJobs) {
 
             Set<HashMap.Entry<String, String>> entrySet = job.entrySet();
 
             for (Map.Entry entry : entrySet) {
 
-                //finish this
+                if(entry.getValue().toString().contains(searchTerm) && !relevantJobs.contains(job)){
+                    relevantJobs.add(job);
+                }
             }
 
         }
+
+        return relevantJobs;
     }
 
     /**
