@@ -82,6 +82,10 @@ public class JobData {
         return jobs;
     }
 
+    /*
+    * Returns the results of search of all fields for search term
+    *
+    */
     public static ArrayList findByValue(String searchTerm){
 
         loadData();
