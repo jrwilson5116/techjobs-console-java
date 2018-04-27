@@ -41,6 +41,8 @@ public class TechJobs {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
 
+                    Collections.sort(results);
+
                     System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
@@ -117,6 +119,7 @@ public class TechJobs {
         //display all
         if (someJobs.isEmpty())
             System.out.println("Search term produced no results");
+
 
         for (HashMap job: someJobs) {
             System.out.println("\n*****");
